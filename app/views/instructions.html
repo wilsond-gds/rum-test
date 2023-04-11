@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+{% block head %}
+<meta name="view-transition" content="same-origin">
+{{ super () }}
+{% endblock %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+        {{ govukBackLink({
+        text: "Back",
+        href: "index.html"
+        }) }}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-10">
+            You have already proved your identity
+        </h1>
+
+        <img src="public/images/unoptimised-image.jpg" alt=""/>
+
+        <p class="govuk-body">You proved your identity when you used your GOV.UK account before. You will not need to do
+            it again to use this service.</p>
+
+        <h2 class="govuk-heading-m">Check your details</h2>
+        <p class="govuk-body">If you have not signed in to your GOV.UK account in a while, you might want to check your
+            details are still correct.</p>
+
+        <div class="govuk-button-group">
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+            text: "Continue",
+            href: "complete.html"
+            }) }}
+
+
+            {{ govukButton({
+            text: "Check my details",
+            classes: "govuk-button--secondary",
+            href: "#"
+            }) }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

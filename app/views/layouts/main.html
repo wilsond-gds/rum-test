@@ -4,3 +4,32 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+
+{% block bodyEnd %}
+<script>
+    (function (n, i, v, r, s, c, x, z) {
+        x = window.AwsRumClient = {q: [], n: n, i: i, v: v, r: r, c: c};
+        window[n] = function (c, p) {
+            x.q.push({c: c, p: p});
+        };
+        z = document.createElement('script');
+        z.async = true;
+        z.src = s;
+        document.head.insertBefore(z, document.head.getElementsByTagName('script')[0]);
+    })(
+        'cwr',
+        '1188b3f9-531a-4d2c-bc19-b0d645899ead',
+        '1.0.0',
+        'eu-west-2',
+        'https://client.rum.us-east-1.amazonaws.com/1.12.0/cwr.js',
+        {
+            sessionSampleRate: 1,
+            endpoint: "https://dataplane.rum.eu-west-2.amazonaws.com",
+            telemetries: ["errors", "performance", "http"],
+            allowCookies: false,
+            enableXRay: false
+        }
+    );
+</script>
+{% endblock %}

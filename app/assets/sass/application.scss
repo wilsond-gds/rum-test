@@ -4,3 +4,11 @@
 // 
 
 // Add extra styles here
+
+img {
+  max-width: 100%;
+  margin-bottom: 3rem;
+  border: 10px solid white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transform: rotate(3deg);
+}
